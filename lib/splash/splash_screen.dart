@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:help_ie/main.dart';
+import 'package:help_ie/main_page.dart';
 
 void main() => runApp(const SplashScreen());
 

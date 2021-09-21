@@ -18,15 +18,20 @@ class _ResponderDialogState extends State<ResponderDialog>
 
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 450),
+      duration: const Duration(seconds: 345),
     );
     scaleAnimation = CurvedAnimation(
       parent: controller,
       curve: Curves.elasticInOut,
     );
 
-    controller.addListener(() => setState(() {}));
     controller.forward();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -47,12 +52,12 @@ class _ResponderDialogState extends State<ResponderDialog>
         children: [
           //--- DIALOG BUTTON POLISI ---//
           ElevatedButton(
+            onPressed: () => print('Tapped Polisi'),
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.all(20.0),
               primary: const Color.fromRGBO(229, 229, 229, 100),
               onPrimary: Colors.green[300],
             ),
-            onPressed: () {},
             child: const Text(
               'Polisi',
               style: TextStyle(
@@ -68,12 +73,12 @@ class _ResponderDialogState extends State<ResponderDialog>
 
           //--- DIALOG BUTTON PEMADAM KEBAKARAN ---//
           ElevatedButton(
+            onPressed: () => print('Tapped Pemadam Kebakaran'),
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.all(20.0),
               primary: const Color.fromRGBO(229, 229, 229, 100),
               onPrimary: Colors.red[300],
             ),
-            onPressed: () {},
             child: const Text(
               'Pemadam Kebakaran',
               style: TextStyle(
@@ -89,12 +94,12 @@ class _ResponderDialogState extends State<ResponderDialog>
 
           //--- DIALOG BUTTON AMBULANCE ---//
           ElevatedButton(
+            onPressed: () => print('Tapped Ambulance'),
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.all(20.0),
               primary: const Color.fromRGBO(229, 229, 229, 100),
               onPrimary: Colors.blue[300],
             ),
-            onPressed: () {},
             child: const Text(
               'Ambulance',
               style: TextStyle(
